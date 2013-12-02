@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_ir_act_message_form">
+            <field name="name">ir.action.message.form</field>
+            <field name="model">ir.action.message</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Message">
+                    <group>
+                        <field name="message"
+                            nolabel="1"
+                            readonly="1"
+                            colspan="4"
+                            />
+                        <group colspan="4" col="8">
+                            <group colspan="6"></group>
+                            <button string="OK" special="cancel" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ir_act_message">
+            <field name="name">Info</field>
+            <field name="res_model">ir.action.message</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_ir_act_message_form" />
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>
